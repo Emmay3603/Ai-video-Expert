@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>All Portfolio Videos</title>
+
+    <link
+      rel="shortcut icon"
+      href="assets/images/mbr-137x115.png"
+      type="image/x-icon"
+    />
+    <meta name="description" content="" />
+
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="assets/web/assets/mobirise-icons2/mobirise2.css"
+    />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/animatecss/animate.css" />
+    <link rel="stylesheet" href="assets/dropdown/css/style.css" />
+    <link rel="stylesheet" href="assets/socicon/css/styles.css" />
+    <link rel="stylesheet" href="assets/theme/css/style.css" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Merriweather:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"
+    /></noscript>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+    /></noscript>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700,800,900,400i,500i,600i,700i,800i,900i&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700,800,900,400i,500i,600i,700i,800i,900i&display=swap"
+    /></noscript>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+    /></noscript>
+    <link
+      rel="preload"
+      as="style"
+      href="assets/mobirise/css/mbr-additional.css?v=RxIj2h"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/mobirise/css/mbr-additional.css?v=RxIj2h"
+      type="text/css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0d1321;
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      h1 {
+        padding: 20px 0;
+        font-size: 2.5rem;
+        font-family: "Merriweather", serif;
+      }
+
+      .filter-buttons {
+        margin-bottom: 20px;
+      }
+
+      .filter-buttons button {
+        background: transparent;
+        border: 1px solid #ccc;
+        color: white;
+        padding: 8px 16px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      .filter-buttons button:hover,
+      .filter-buttons button.active {
+        background: #ffae0034;
+        border-color: #ffae00;
+        transform: translateY(-2px);
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1300px;
+        margin: auto;
+      }
+
+      .card {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #222;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+      }
+
+      .card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .card video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover video {
+        transform: scale(1.03);
+      }
+
+      /* BACK BUTTON */
+      .back-container {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 30px 20px;
+      }
+
+      .back-btn {
+        display: inline-block;
+        background: #ffae00;
+        color: #0d1321;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .back-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: left 0.4s ease;
+      }
+
+      .back-btn:hover::after {
+        left: 100%;
+      }
+
+      .back-btn:hover {
+        color: #0d1321;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(255, 174, 0, 0.5);
+      }
+
+      .back-btn:active {
+        transform: scale(0.95);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 48px;
+        color: #ffffff;
+        opacity: 0.8;
+        z-index: 2;
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        display: flex;
+        background-color: #ffae0000;
+        border: 2px white solid;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+
+      /* Hover effect (desktop): fade overlay + scale play icon */
+      .card:hover::before {
+        opacity: 0;
+      }
+
+      .card:hover .play-icon {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+      }
+
+      /* While playing (mobile): hide overlay + icon */
+      .card.playing::before,
+      .card.playing .play-icon {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Portfolio Gallery</h1>
+
+    <div class="filter-buttons">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="cinematic">Cinematic</button>
+      <button data-filter="music">Music</button>
+      <button data-filter="product">Product</button>
+      <button data-filter="commercials">Commercials</button>
+      <button data-filter="social">Social</button>
+      <button data-filter="horror">Horror</button>
+      <button data-filter="movie-trailer">Movie Trailer</button>
+    </div>
+
+    <div class="portfolio-grid">
+      <!-- Each category has 3 cards -->
+      <!-- Cinematic -->
+      <div class="card cinematic">
+        <video preload="metadata">
+          <source src="commercial video.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card cinematic">
+        <video preload="metadata">
+          <source src="commercial video.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card cinematic">
+        <video preload="metadata">
+          <source src="commercial video.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+
+      <!-- Music -->
+      <div class="card music">
+        <video preload="metadata">
+          <source src="commercial video2.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card music">
+        <video preload="metadata">
+          <source src="commercial video2.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card music">
+        <video preload="metadata">
+          <source src="commercial video2.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div class="card product">
+        <video preload="metadata">
+          <source src="g9tpfpwwt18h1dy7z78r.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card product">
+        <video preload="metadata">
+          <source src="g9tpfpwwt18h1dy7z78r.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card product">
+        <video preload="metadata">
+          <source src="g9tpfpwwt18h1dy7z78r.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+
+      <!-- Commercials -->
+      <div class="card commercials">
+        <video preload="metadata">
+          <source src="hszyhrsgazbireh3bg5q.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card commercials">
+        <video preload="metadata">
+          <source src="hszyhrsgazbireh3bg5q.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card commercials">
+        <video preload="metadata">
+          <source src="hszyhrsgazbireh3bg5q.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="card social">
+        <video preload="metadata">
+          <source src="th2drp5brsdysmgriirx.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card social">
+        <video preload="metadata">
+          <source src="th2drp5brsdysmgriirx.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card social">
+        <video preload="metadata">
+          <source src="th2drp5brsdysmgriirx.mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+
+      <!-- Horror -->
+      <div class="card horror">
+        <video preload="metadata">
+          <source
+            src="HyperX Design Promo Video - Minneapolis Digital Marketing Agency.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card horror">
+        <video preload="metadata">
+          <source
+            src="HyperX Design Promo Video - Minneapolis Digital Marketing Agency.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card horror">
+        <video preload="metadata">
+          <source
+            src="HyperX Design Promo Video - Minneapolis Digital Marketing Agency.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+
+      <!-- Movie Trailer -->
+      <div class="card movie-trailer">
+        <video preload="metadata">
+          <source src="0802 (1).mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card movie-trailer">
+        <video preload="metadata">
+          <source src="0802 (1).mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+      <div class="card movie-trailer">
+        <video preload="metadata">
+          <source src="0802 (1).mp4" type="video/mp4" />
+        </video>
+        <div class="play-icon">
+          <div style="translate: 5px -2px">▶</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up" style="z-index: 0">
+      <a style="text-align: center"
+        ><i
+          class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"
+        ></i
+      ></a>
+    </div>
+    <input name="animation" type="hidden" />
+    <div class="back-container">
+      <a href="index.html" style="z-index: 1" class="back-btn">← Back</a>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/ytplayer/index.js"></script>
+    <script src="assets/vimeoplayer/player.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    <script src="assets/formoid/formoid.min.js"></script>
+
+    <script>
+      // Filter buttons
+      const filterButtons = document.querySelectorAll(".filter-buttons button");
+      const cards = document.querySelectorAll(".card");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          document
+            .querySelector(".filter-buttons .active")
+            .classList.remove("active");
+          button.classList.add("active");
+
+          const filter = button.getAttribute("data-filter");
+          cards.forEach((card) => {
+            if (filter === "all" || card.classList.contains(filter)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Scroll animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+
+      // Video hover/tap logic
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      cards.forEach((card) => {
+        const video = card.querySelector("video");
+        if (isMobile) {
+          card.addEventListener("click", () => {
+            if (video.paused) video.play();
+            else video.pause();
+          });
+        } else {
+          card.addEventListener("mouseenter", () => video.play());
+          card.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
