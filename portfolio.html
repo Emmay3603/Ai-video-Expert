@@ -83,6 +83,37 @@
     />
 
     <style>
+      /* Floating contact button */
+      .floating-contact {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        width: 60px;
+        height: 60px;
+        background: #ffae00;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 1;
+      }
+
+      /* Hidden state (for scroll logic) */
+      .floating-contact.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* 🚫 Hide the button completely on screens larger than 768px */
+      @media (min-width: 769px) {
+        .floating-contact {
+          display: none !important;
+        }
+      }
+
       body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -251,6 +282,16 @@
     </style>
   </head>
   <body>
+    <a
+      href="mailto:info@nexa-pixel.com?subject=Contact%20From%20Your%20Website&body=Hello%20Nexa%20Pixel,"
+      class="floating-contact"
+    >
+      <i
+        class="fa-regular fa-message"
+        style="color: white; font-size: 20px"
+      ></i>
+    </a>
+
     <h1>Portfolio Gallery</h1>
 
     <div class="filter-buttons">
