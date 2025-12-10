@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | Nexa-Pixel</title>
+
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d1321;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .thank-you-container {
+      padding: 120px 20px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .thank-you-container h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .thank-you-container p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      color: #cccccc;
+    }
+
+    .btn-primary {
+      padding: 14px 36px;
+      background-color: #ffae00;
+      border: none;
+      color: #000;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    /* Floating contact button */
+    .floating-contact {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background: #ffae00;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    @media (min-width: 769px) {
+      .floating-contact {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Floating Button -->
+<a href="mailto:info@nexa-pixel.com?subject=Contact%20From%20Your%20Website&body=Hello%20Nexa%20Pixel,"
+   class="floating-contact">
+  <i class="fa-regular fa-message" style="color: white; font-size: 20px"></i>
+</a>
+
+<!-- Navbar -->
+<section data-bs-version="5.1" class="menu menu3 cid-menu" once="menu" id="menu3-d">
+  <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="navbar-brand">
+        <span class="navbar-caption-wrap">
+          <a class="navbar-caption text-white display-4" href="index.html">Nexa-Pixel</a>
+        </span>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<!-- THANK YOU MESSAGE SECTION -->
+<div class="thank-you-container">
+  <h1>Thank You! 🎉</h1>
+  <p>Your message has been successfully sent.  
+     Our team will get back to you shortly.</p>
+
+  <a href="index.html" class="btn-primary">Back to Home</a>
+</div>
+
+<!-- Footer -->
+<section data-bs-version="5.1" class="footer4 cid-footer" once="footers" id="footer04-k">
+  <div class="container">
+    <div class="media-container-row align-center mbr-white">
+      <div class="col-12">
+        <p class="mbr-text mb-0 mbr-fonts-style display-7">
+          © 2025 Nexa-Pixel. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
